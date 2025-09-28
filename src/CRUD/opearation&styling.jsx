@@ -1,67 +1,22 @@
+import { nanoid } from "nanoid";
 import { useState } from "react";
+import Create from "./component/Create";
+import Read from "./component/Read";
 
 const App = () => {
   const [todos, settodos] = useState([
-    { id: 1, tiltle: "Kaam karle bhai", icCompleted: false },
+    { id: 1, title: "Kaam karle", isCompleted: false },
   ]);
-  const [title, settitle] = useState("");
-  const [completed, setcompleted] = useState(false);
-  const [gender, setgender] = useState();
-  const [city, setcity] = useState('delhi');
 
+  // const [completed, setcompleted] = useState(false);
+  // const [gender, setgender] = useState();
+  // const [city, setcity] = useState('delhi');
 
   return (
-    <div>
-      <h1>Create Tasks</h1>
-      <form>
-        <input
-          onChange={(e) => {
-            settitle(e.target.value);
-            console.log(e.target.value);
-          }}
-          value={title}
-          type="text"
-          placeholder="title"
-        />
-        <br />
-        <br />
-        <input
-        checked={completed}
-          onChange={(e) => {
-            setcompleted(e.target.checked);}}
-          type="checkbox"
-        />{" "}
-        Completed
-        <br />
-        <input
-          value="male"
-          onChange={(e) => {
-            setgender(e.target.value);
-          }}
-          checked={gender=="male"&&true}
-          type="radio"
-        />{" "}
-        Male
-        <input
-          value="female"
-          onChange={(e) => {
-            setgender(e.target.value);
-          }}
-          checked={gender=="female"&& true}
-          type="radio"
-        />{" "}
-        female
-        <br />
-
-          <select value={city} onChange={(e)=>{setcity(e.target.value)}}>
-            <option value="delhi">Delhi</option>
-            <option value="hapur">Hapur</option>
-            <option value="merrut">Merrut</option>
-          </select>
-
-        <button>Create Todo</button>
-      </form>
-    </div>
+    <>
+      <Create todos={todos} settodos={settodos} />
+      <Read todos={todos} settodos={settodos} />
+    </>
   );
 };
 
