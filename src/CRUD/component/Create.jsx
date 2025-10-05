@@ -24,10 +24,12 @@ const App = (props) => {
   };
 
   return (
-    <div>
-      <h1>Create Tasks</h1>
+    <div className="w-[50%] p-10 ">
+      <h1 className="mb-10 text-5xl font-thin text-white">Set
+        <span className=" text-red-400 italic"> Reminders</span> For Task</h1>
       <form onSubmit={SubmitHandler}>
         <input
+        className="border-b w-full text-2xl font-thin p-2 outline-o"
           onChange={(e) => {
             settitle(e.target.value);
           }}
@@ -71,7 +73,7 @@ const App = (props) => {
             <option value="merrut">Merrut</option>
           </select> */}
 
-        <button>Create Todo</button>
+        <button className="text-xl px-10 py-2 border rounded mt-5">Create Todo</button>
       </form>
     </div>
   );

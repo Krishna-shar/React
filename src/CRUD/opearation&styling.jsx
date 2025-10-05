@@ -13,10 +13,10 @@ const App = () => {
   // const [city, setcity] = useState('delhi');
 
   return (
-    <>
+    <div className="flex w-screen h-screen bg-gray-700 p-10">
       <Create todos={todos} settodos={settodos} />
       <Read todos={todos} settodos={settodos} />
-    </>
+    </div>
   );
 };
 
